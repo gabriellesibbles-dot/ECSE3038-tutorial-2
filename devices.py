@@ -5,4 +5,8 @@ readings = [
     {"name": "fridge",     "room": "kitchen", "temp": 4.2,  "online": False},
     {"name": "patio",      "room": "outside", "temp": 29.8, "online": True},
 ]
- 
+def list_devices(devices):
+    for device in devices:
+        print(f"{device['name']} ({device['room']}) - {device['temp']}°C - {'Online' if device['online'] else 'Offline'}")
+
+list_devices(readings), 
