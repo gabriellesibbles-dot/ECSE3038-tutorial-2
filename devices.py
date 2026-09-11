@@ -9,4 +9,13 @@ def list_devices(devices):
     for device in devices:
         print(f"{device['name']} ({device['room']}) - {device['temp']}°C - {'Online' if device['online'] else 'Offline'}")
 
-list_devices(readings), 
+list_devices(readings),
+
+
+def average_temp(devices):
+    if not devices:
+        return 0
+    return sum(device["temp"] for device in devices) / len(devices)
+
+print(f"Average temperature: {average_temp(readings):.2f}°C")
+
