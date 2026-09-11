@@ -26,3 +26,15 @@ def hottest(devices):
 
 
 print(hottest(readings))
+
+
+def to_status(device):
+    return {
+        "device": device["name"],
+        "status": "Online" if device["online"] else "Offline",
+        "celsius": device["temp"],
+    }
+
+
+print(to_status(readings[0]))
+
