@@ -38,3 +38,16 @@ def to_status(device):
 
 print(to_status(readings[0]))
 
+
+def by_room(devices):
+    rooms = {}
+    for device in devices:
+        rooms.setdefault(device["room"], []).append(device["name"])
+    return rooms
+
+
+print(by_room(readings))
+
+
+
+
