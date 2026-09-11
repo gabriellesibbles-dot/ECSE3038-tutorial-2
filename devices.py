@@ -19,3 +19,10 @@ def average_temp(devices):
 
 print(f"Average temperature: {average_temp(readings):.2f}°C")
 
+def hottest(devices):
+    if not devices:
+        return None
+    return max(devices, key=lambda device: device["temp"])
+
+
+print(hottest(readings))
